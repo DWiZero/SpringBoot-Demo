@@ -18,8 +18,8 @@ public class SwaggerConfig {
         return new Docket(DocumentationType.SWAGGER_2)
                 .apiInfo(apiInfo())
                 .select()
-                .apis(RequestHandlerSelectors.basePackage(""))
-                .paths(PathSelectors.none())
+                .apis(RequestHandlerSelectors.basePackage("com.dwizero.Rest"))
+//                .paths(PathSelectors.none())
                 .build();
     }
 
