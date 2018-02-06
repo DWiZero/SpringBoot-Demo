@@ -1,0 +1,11 @@
+service:
+    post: 8080
+
+mybatis:
+    mapperLocations: classpath:Mybatis/*.xml
+    typeAliasesPackage: com.dwizero.Mapper
+    ConfigLocation: classpath:Mybatis-Config.xml
+
+spring:
+    profiles:
+        active: local
