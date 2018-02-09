@@ -24,6 +24,7 @@ import java.util.List;
 
 //Question:这种设置起作用,没有@Bean,@configuration不起作用
 //知识点：@Bean,@configuration
+//无@configuration，@Beanspring无法获取
 @Configuration
 public class MessageConvertersConfig extends WebMvcConfigurerAdapter {
     public MessageConvertersConfig() {

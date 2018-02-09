@@ -5,7 +5,7 @@ mybatis:
     mapperLocations: classpath:Mybatis/*.xml
     typeAliasesPackage: com.dwizero.Mapper
     ConfigLocation: classpath:Mybatis-Config.xml
-
+#用来标识使用那个application-{}.properties
 spring:
     profiles:
         active: local
