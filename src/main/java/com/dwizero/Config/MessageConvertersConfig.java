@@ -1,4 +1,4 @@
-package com.dwizero.Filter;
+package com.dwizero.Config;
 
 import com.alibaba.fastjson.serializer.SerializerFeature;
 import com.alibaba.fastjson.support.config.FastJsonConfig;
@@ -22,27 +22,31 @@ import java.util.List;
  * 第二种：在APP启动类中，注入Bean HttpMessageConverters
  */
 
-//Question:这种设置起作用,没有@Bean,@configuration不起作用
 //知识点：@Bean,@configuration
 //无@configuration，@Beanspring无法获取
 @Configuration
-public class MessageConvertersConfig extends WebMvcConfigurerAdapter {
-    public MessageConvertersConfig() {
+public class MessageConvertersConfig extends WebMvcConfigurerAdapter
+{
+    public MessageConvertersConfig()
+    {
     }
 
     @Bean
-    public ServiceInterceptor getServiceInterceptor() {
+    public ServiceInterceptor getServiceInterceptor()
+    {
         return new ServiceInterceptor();
     }
 
     @Override
-    public void addInterceptors(InterceptorRegistry registry) {
+    public void addInterceptors(InterceptorRegistry registry)
+    {
         registry.addInterceptor(getServiceInterceptor()).addPathPatterns("/**");
         super.addInterceptors(registry);
     }
 
     @Override
-    public void configureMessageConverters(List<HttpMessageConverter<?>> converters) {
+    public void configureMessageConverters(List<HttpMessageConverter<?>> converters)
+    {
 
         FastJsonHttpMessageConverter fastConverter = new FastJsonHttpMessageConverter();
         FastJsonConfig fastJsonConfig = new FastJsonConfig();
@@ -56,7 +60,7 @@ public class MessageConvertersConfig extends WebMvcConfigurerAdapter {
 }
 
 //Question:这种设置起作用，但是swagger页面没有API接口
-//Answer: http://blog.didispace.com/fastjson-swagger-solution/  升级fastjson版本，未解决,
+//Answer: http://blog.didispace.com/fastjson-swagger-solution/  升级fastjson版本,
 /*@Configuration
 public class MessageConvertersConfig {
 

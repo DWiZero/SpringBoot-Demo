@@ -9,3 +9,7 @@ mybatis:
 spring:
     profiles:
         active: local
+    http:
+        multipart:
+            maxFileSize: 100Mb
+            maxRequestSize: 100Mb

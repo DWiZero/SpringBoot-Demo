@@ -7,9 +7,10 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 
 @SpringBootApplication
 @EnableScheduling
-public class SpringBootApplation {
-
-    public static void main(String[] args) throws Exception {
+public class SpringBootApplation
+{
+    public static void main(String[] args) throws Exception
+    {
         SpringApplication.run(SpringBootApplation.class, args);
     }
 }

@@ -15,8 +15,8 @@ import javax.sql.DataSource;
 import java.sql.SQLException;
 
 @Configuration
-public class DruidConfig {
-
+public class DruidConfig
+{
     private Logger logger = LoggerFactory.getLogger(DruidConfig.class);
 
     @Value("${spring.datasource.url}")
@@ -68,7 +68,8 @@ public class DruidConfig {
     private String logSlowSql;
 
     @Bean
-    public ServletRegistrationBean druidServlet() {
+    public ServletRegistrationBean druidServlet()
+    {
         ServletRegistrationBean reg = new ServletRegistrationBean();
         reg.setServlet(new StatViewServlet());
         reg.addUrlMappings("/druid/*");
@@ -79,7 +80,8 @@ public class DruidConfig {
     }
 
     @Bean
-    public FilterRegistrationBean filterRegistrationBean() {
+    public FilterRegistrationBean filterRegistrationBean()
+    {
         FilterRegistrationBean filterRegistrationBean = new FilterRegistrationBean();
         filterRegistrationBean.setFilter(new WebStatFilter());
         filterRegistrationBean.addUrlPatterns("/*");
@@ -89,7 +91,8 @@ public class DruidConfig {
     }
 
     @Bean
-    public DataSource druidDataSource() {
+    public DataSource druidDataSource()
+    {
         DruidDataSource datasource = new DruidDataSource();
         datasource.setUrl(dbUrl);
         datasource.setUsername(username);

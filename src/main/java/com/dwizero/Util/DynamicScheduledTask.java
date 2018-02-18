@@ -12,23 +12,27 @@ import org.springframework.stereotype.Service;
  * 动态设置定时任务的时间
  */
 @Service
-public class DynamicScheduledTask {
+public class DynamicScheduledTask
+{
     @Autowired
     private ThreadPoolTaskScheduler threadPoolTaskScheduler;
 
     @Bean
-    public ThreadPoolTaskScheduler threadPoolTaskScheduler() {
+    public ThreadPoolTaskScheduler threadPoolTaskScheduler()
+    {
         return new ThreadPoolTaskScheduler();
     }
 
     private static final Logger logger = LoggerFactory.getLogger(DynamicScheduledTask.class);
     private String cron = "0/1 * * * * ?";
 
-    public String getCron() {
+    public String getCron()
+    {
         return cron;
     }
 
-    public void setCron(String cron) {
+    public void setCron(String cron)
+    {
         this.cron = cron;
         threadPoolTaskScheduler.schedule(() -> {
             logger.info(cron);

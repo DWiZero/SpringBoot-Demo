@@ -11,11 +11,12 @@ import org.springframework.web.bind.annotation.ResponseBody;
  * 针对相应的异常使用@ExceptionHandler(value = Exception.class)
  */
 @ControllerAdvice
-public class GlobalExceptionHandler {
-
+public class GlobalExceptionHandler
+{
     @ResponseBody
     @ExceptionHandler(value = ServiceException.class)
-    public ResponseEntry<String> defaultErrorHandler(ServiceException e) throws Exception {
+    public ResponseEntry<String> defaultErrorHandler(ServiceException e) throws Exception
+    {
         ResponseEntry<String> r = new ResponseEntry<>();
         r.setMessage(e.getMessage());
         r.setCode(e.getCode());
