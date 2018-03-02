@@ -1,7 +1,7 @@
 package com.dwizero.Rest;
 
 import com.dwizero.GlobleBean.ServiceException;
-import com.dwizero.Services.rabbitMQ.RabbitMQClient;
+import com.dwizero.Services.rabbitMQ.RabbitMQProductor;
 import com.dwizero.Util.DynamicScheduledTask;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,7 +16,7 @@ public class DoTest
     @Autowired
     private DynamicScheduledTask dynamicScheduledTask;
     @Autowired
-    RabbitMQClient rabbitMQClient;
+    RabbitMQProductor rabbitMQProductor;
 
     @RequestMapping(value = "/scheduled", method = RequestMethod.GET)
     public void testScheduled()
@@ -31,10 +31,24 @@ public class DoTest
         throw new ServiceException("test GlobleException", 5300);
     }
 
-    @ApiOperation("/rabbitmq")
-    @RequestMapping(value = "/rabbitmq", method = RequestMethod.GET)
+    @ApiOperation("/rabbitMQ")
+    @RequestMapping(value = "/rabbitMQ", method = RequestMethod.GET)
     public void testRabbitMQ()
     {
-        rabbitMQClient.send("test");
+        rabbitMQProductor.send();
+    }
+
+    @ApiOperation("/rabbitMQTopic")
+    @RequestMapping(value = "/rabbitMQTopic", method = RequestMethod.GET)
+    public void testRabbitMQTopic()
+    {
+        rabbitMQProductor.sendTopicMessage();
+    }
+
+    @ApiOperation("/rabbitMQFanout")
+    @RequestMapping(value = "/rabbitMQFanout", method = RequestMethod.GET)
+    public void testRabbitMQFanout()
+    {
+        rabbitMQProductor.sendFanoutMessage();
     }
 }
