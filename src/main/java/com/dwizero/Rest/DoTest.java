@@ -1,12 +1,15 @@
 package com.dwizero.Rest;
 
+import com.dwizero.GlobleBean.ResponseEntry;
 import com.dwizero.GlobleBean.ServiceException;
 import com.dwizero.Services.rabbitMQ.RabbitMQProductor;
+import com.dwizero.Services.userTestCache.userService;
 import com.dwizero.Util.DynamicScheduledTask;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -17,6 +20,8 @@ public class DoTest
     private DynamicScheduledTask dynamicScheduledTask;
     @Autowired
     RabbitMQProductor rabbitMQProductor;
+    @Autowired
+    userService userService;
 
     @RequestMapping(value = "/scheduled", method = RequestMethod.GET)
     public void testScheduled()
@@ -50,5 +55,23 @@ public class DoTest
     public void testRabbitMQFanout()
     {
         rabbitMQProductor.sendFanoutMessage();
+    }
+
+    @ApiOperation("/getUserCacheTest")
+    @RequestMapping(value = "/getUserCacheTest", method = RequestMethod.GET)
+    public ResponseEntry testGetUserCache(@RequestParam() Integer uid)
+    {
+        ResponseEntry responseEntry = new ResponseEntry();
+        responseEntry.setData(userService.findUser(uid));
+        return responseEntry;
+    }
+
+    @ApiOperation("/delUserCacheTest")
+    @RequestMapping(value = "/delUserCacheTest", method = RequestMethod.GET)
+    public ResponseEntry testDelUserCache(@RequestParam() Integer uid)
+    {
+        ResponseEntry responseEntry = new ResponseEntry();
+        responseEntry.setData(userService.delUser(uid));
+        return responseEntry;
     }
 }

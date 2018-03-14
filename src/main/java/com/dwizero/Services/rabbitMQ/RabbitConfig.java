@@ -1,9 +1,14 @@
 package com.dwizero.Services.rabbitMQ;
 
 import org.springframework.amqp.core.*;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+
+/**
+ * @Qualifier("{声明的bean}")选择要注入的指定名称的bean
+ */
 @Configuration
 public class RabbitConfig {
 
@@ -29,7 +34,7 @@ public class RabbitConfig {
         return new TopicExchange("topicExchange");
     }
     @Bean
-    Binding bindingExchangeMessage(Queue queueMessage, TopicExchange topicExchange) {
+    Binding bindingExchangeMessage(@Qualifier("queueMessage" ) Queue queueMessage, TopicExchange topicExchange) {
         return BindingBuilder.bind(queueMessage).to(topicExchange).with("topic.message");
     }
     /**

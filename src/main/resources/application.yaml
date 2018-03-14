@@ -3,7 +3,7 @@ service:
 
 mybatis:
     mapperLocations: classpath:Mybatis/*.xml
-    typeAliasesPackage: com.dwizero.Mapper
+    typeAliasesPackage: com.dwizero.Bean.VO
     ConfigLocation: classpath:Mybatis-Config.xml
 spring:
 #用来标识使用那个application-{}.properties
