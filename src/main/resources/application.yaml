@@ -20,3 +20,9 @@ spring:
         addresses: 192.168.68.128:5672
         username: admin
         password: admin
+
+#logging:
+#    level:
+#        com.dwizero: DEBUG
+#    file: ./logs/core.log
+#    root: INFO
