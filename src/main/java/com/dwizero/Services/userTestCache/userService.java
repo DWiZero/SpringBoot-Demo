@@ -9,20 +9,22 @@ import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 @Service
-@CacheConfig(cacheNames = "user")
+@CacheConfig(cacheNames = "users")
 public class userService
 {
     @Autowired
     userInfoMapper userInfoMapper;
 
-    @Cacheable(key = "#p0")
+    //    @Cacheable(key = "#p0",condition="#uid%2==0")
+    @Cacheable(key = "'user:'+#uid", condition = "#uid%2==0")
     public userInfo findUser(Integer uid)
     {
         return userInfoMapper.selectByPrimaryKey(uid);
     }
-    @CacheEvict(key = "#p0")
+
+    @CacheEvict(key = "'user:'+#p0")
     public int delUser(Integer uid)
     {
-         return userInfoMapper.deleteByPrimaryKey(uid);
+        return userInfoMapper.deleteByPrimaryKey(uid);
     }
 }

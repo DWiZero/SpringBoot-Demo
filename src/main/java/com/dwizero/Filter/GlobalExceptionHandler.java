@@ -1,7 +1,7 @@
 package com.dwizero.Filter;
 
-import com.dwizero.GlobleBean.ResponseEntry;
-import com.dwizero.GlobleBean.ServiceException;
+import com.dwizero.Bean.GlobleBean.ResponseEntry;
+import com.dwizero.Bean.GlobleBean.ServiceException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;

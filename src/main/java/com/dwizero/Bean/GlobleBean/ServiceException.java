@@ -1,4 +1,4 @@
-package com.dwizero.GlobleBean;
+package com.dwizero.Bean.GlobleBean;
 
 public class ServiceException extends RuntimeException
 {

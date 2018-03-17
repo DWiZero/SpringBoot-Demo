@@ -1,7 +1,7 @@
 package com.dwizero.Rest;
 
-import com.dwizero.GlobleBean.ResponseEntry;
-import com.dwizero.GlobleBean.ServiceException;
+import com.dwizero.Bean.GlobleBean.ResponseEntry;
+import com.dwizero.Bean.GlobleBean.ServiceException;
 import com.dwizero.Services.rabbitMQ.RabbitMQProductor;
 import com.dwizero.Services.userTestCache.userService;
 import com.dwizero.Util.DynamicScheduledTask;
