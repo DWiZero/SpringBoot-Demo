@@ -10,6 +10,7 @@ import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.boot.web.servlet.ServletRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Scope;
 
 import javax.sql.DataSource;
 import java.sql.SQLException;
@@ -68,6 +69,7 @@ public class DruidConfig
     private String logSlowSql;
 
     @Bean
+    @Scope()//设置bean的作用域
     public ServletRegistrationBean druidServlet()
     {
         ServletRegistrationBean reg = new ServletRegistrationBean();

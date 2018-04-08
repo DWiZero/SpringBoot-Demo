@@ -9,7 +9,7 @@ import org.springframework.context.annotation.Configuration;
 /**
  * @Qualifier("{声明的bean}")选择要注入的指定名称的bean
  */
-@Configuration
+//@Configuration
 public class RabbitConfig {
 
     /**

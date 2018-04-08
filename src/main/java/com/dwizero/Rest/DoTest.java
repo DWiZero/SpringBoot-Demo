@@ -18,7 +18,7 @@ public class DoTest
 {
     @Autowired
     private DynamicScheduledTask dynamicScheduledTask;
-    @Autowired
+//    @Autowired
     RabbitMQProductor rabbitMQProductor;
     @Autowired
     userService userService;

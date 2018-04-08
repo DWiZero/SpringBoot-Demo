@@ -11,8 +11,8 @@ spring:
         active: local
     http:
         multipart:
-            maxFileSize: 100Mb
-            maxRequestSize: 100Mb
+            maxFileSize: 10Mb
+            maxRequestSize: 10Mb
     redis:
         host: 192.168.68.128
         port: 6379

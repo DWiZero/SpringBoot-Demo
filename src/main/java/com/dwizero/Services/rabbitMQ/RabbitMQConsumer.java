@@ -3,7 +3,7 @@ package com.dwizero.Services.rabbitMQ;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.stereotype.Service;
 
-@Service
+//@Service
 public class RabbitMQConsumer
 {
     @RabbitListener(queues = "hello")

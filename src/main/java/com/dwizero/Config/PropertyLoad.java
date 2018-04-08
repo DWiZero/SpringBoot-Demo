@@ -7,14 +7,14 @@ import org.springframework.stereotype.Component;
 public class PropertyLoad
 {
     @Value("${def.filePath}")
-    public String BaseFilePath;
+    private String BaseFilePath;
 
-    private String getBaseFilePath()
+    public String getBaseFilePath()
     {
         return BaseFilePath;
     }
 
-    private void setBaseFilePath(String baseFilePath)
+    public void setBaseFilePath(String baseFilePath)
     {
         BaseFilePath = baseFilePath;
     }

@@ -16,7 +16,7 @@ public class ResourceController
     @Autowired
     private ResourceService resourceService;
 
-    @RequestMapping(value = "/upload", method = RequestMethod.GET)
+    @RequestMapping(value = "/upload", method = RequestMethod.POST)
     public void upload(HttpServletRequest request) throws IOException
     {
         resourceService.fileUpload(request);
