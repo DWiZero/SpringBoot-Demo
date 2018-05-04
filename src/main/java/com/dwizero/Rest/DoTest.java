@@ -67,7 +67,7 @@ public class DoTest
     }
 
     @ApiOperation("/delUserCacheTest")
-    @RequestMapping(value = "/delUserCacheTest", method = RequestMethod.GET)
+    @RequestMapping(value = "/delUserCacheTest", method = RequestMethod.DELETE)
     public ResponseEntry testDelUserCache(@RequestParam() Integer uid)
     {
         ResponseEntry responseEntry = new ResponseEntry();
