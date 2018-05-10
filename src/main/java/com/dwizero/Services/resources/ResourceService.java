@@ -1,6 +1,7 @@
 package com.dwizero.Services.resources;
 
 import com.dwizero.Config.PropertyLoad;
+import org.apache.commons.io.FileUtils;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -26,7 +27,6 @@ public class ResourceService
     {
         List<MultipartFile> files = ((MultipartHttpServletRequest) request).getFiles("file");
         MultipartFile file = null;
-        BufferedOutputStream stream = null;
         String fileName;
         byte[] bytes;
         for (int i = 0; i < files.size(); ++i) {
@@ -35,12 +35,9 @@ public class ResourceService
                 fileName = propertyLoad.getBaseFilePath() + file.getOriginalFilename();
                 try {
                     bytes = file.getBytes();
-                    stream = new BufferedOutputStream(new FileOutputStream(new File(fileName)));
-                    stream.write(bytes);
+                    FileUtils.writeByteArrayToFile(new File(fileName),bytes);
                 } catch (IOException e) {
                     logger.error(e.getMessage());
-                }finally {
-                    stream.close();
                 }
             }
         }
