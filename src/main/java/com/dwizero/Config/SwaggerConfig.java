@@ -17,15 +17,14 @@ public class SwaggerConfig
     @Bean
     public Docket createRestApi()
     {
-        return new Docket(DocumentationType.SWAGGER_2).apiInfo(apiInfo()).select().apis(RequestHandlerSelectors
-                .basePackage("com.dwizero.Rest"))
+        return new Docket(DocumentationType.SWAGGER_2).apiInfo(apiInfo()).select().apis(RequestHandlerSelectors.basePackage("com.dwizero.Controller"))
                 //                .paths(PathSelectors.none())
                 .build();
     }
 
     private ApiInfo apiInfo()
     {
-        return new ApiInfoBuilder().title("Spring Boot中使用Swagger2构建RESTful APIs").description("Spring " +
-                "Boot中使用Swagger2").version("1.0").build();
+        return new ApiInfoBuilder().title("Spring Boot中使用Swagger2构建RESTful APIs").description("Spring " + "Boot" +
+                "中使用Swagger2").version("1.0").build();
     }
 }

@@ -1,4 +1,4 @@
-package com.dwizero.Rest;
+package com.dwizero.Controller;
 
 import com.dwizero.Bean.GlobleBean.ResponseEntry;
 import com.dwizero.Bean.GlobleBean.ServiceException;
@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/test")
-public class DoTest
+public class TestController
 {
     @Autowired
     private DynamicScheduledTask dynamicScheduledTask;
@@ -72,6 +72,15 @@ public class DoTest
     {
         ResponseEntry responseEntry = new ResponseEntry();
         responseEntry.setData(userService.delUser(uid));
+        return responseEntry;
+    }
+
+    @ApiOperation("/GetFilterParam")
+    @RequestMapping(value = "/GetFilterParam", method = RequestMethod.GET)
+    public ResponseEntry testGetFilterParam(@RequestParam() String cn)
+    {
+        ResponseEntry responseEntry = new ResponseEntry();
+        responseEntry.setData(cn);
         return responseEntry;
     }
 }

@@ -1,4 +1,4 @@
-package com.dwizero.Rest;
+package com.dwizero.Controller;
 
 import com.dwizero.Services.resources.ResourceService;
 import org.springframework.beans.factory.annotation.Autowired;
