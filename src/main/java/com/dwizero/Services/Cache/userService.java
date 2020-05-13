@@ -1,4 +1,4 @@
-package com.dwizero.Services.userTestCache;
+package com.dwizero.Services.Cache;
 
 import com.dwizero.Bean.VO.userInfo;
 import com.dwizero.Mapper.userInfoMapper;

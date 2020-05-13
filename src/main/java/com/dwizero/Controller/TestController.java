@@ -3,7 +3,7 @@ package com.dwizero.Controller;
 import com.dwizero.Bean.GlobleBean.ResponseEntry;
 import com.dwizero.Bean.GlobleBean.ServiceException;
 import com.dwizero.Services.rabbitMQ.RabbitMQProductor;
-import com.dwizero.Services.userTestCache.userService;
+import com.dwizero.Services.Cache.userService;
 import com.dwizero.Util.DynamicScheduledTask;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
