@@ -24,7 +24,7 @@
             <property name="forceBigDecimals" value="false"/>
         </javaTypeResolver>
         <!-- 生成模型的包名和位置 -->
-        <javaModelGenerator targetPackage="com.dwizero.Bean.VO"
+        <javaModelGenerator targetPackage="com.DWiZero.Bean.VO"
                             targetProject="src/main/java">
             <property name="enableSubPackages" value="true"/>
             <property name="trimStrings" value="true"/>
@@ -41,7 +41,7 @@
             <property name="enableSubPackages" value="true"/>
         </javaClientGenerator>-->
         <javaClientGenerator type="XMLMAPPER"
-                             targetPackage="com.dwizero.Mapper.mybatis"
+                             targetPackage="com.DWiZero.Mapper.mybatis"
                              targetProject="src/main/java">
             <property name="enableSubPackages" value="true"/>
         </javaClientGenerator>
