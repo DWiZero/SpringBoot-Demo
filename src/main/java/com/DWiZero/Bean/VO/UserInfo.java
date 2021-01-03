@@ -2,7 +2,7 @@ package com.DWiZero.Bean.VO;
 
 import java.io.Serializable;
 
-public class userInfo implements Serializable {
+public class UserInfo implements Serializable {
     private Integer userId;
 
     private String userName;
@@ -36,7 +36,7 @@ public class userInfo implements Serializable {
         if (getClass() != that.getClass()) {
             return false;
         }
-        userInfo other = (userInfo) that;
+        UserInfo other = (UserInfo) that;
         return (this.getUserId() == null ? other.getUserId() == null : this.getUserId().equals(other.getUserId()))
             && (this.getUserName() == null ? other.getUserName() == null : this.getUserName().equals(other.getUserName()));
     }

@@ -27,11 +27,11 @@ import java.lang.reflect.Method;
 @Aspect
 //@Component
 @Log4j2
-public class serviceLog
+public class ServiceLog
 {
     ThreadLocal<Long> startTime = new ThreadLocal<>();
 
-    @Pointcut("execution(public * com.dwizero.Services..*.*(..))")
+    @Pointcut("execution(public * com.DWiZero.Services..*.*(..))")
     public void Log()
     {
     }

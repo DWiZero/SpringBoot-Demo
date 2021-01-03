@@ -3,7 +3,7 @@ package com.DWiZero.Controller;
 import com.DWiZero.Bean.GlobleBean.ResponseEntry;
 import com.DWiZero.Bean.GlobleBean.ServiceException;
 import com.DWiZero.Services.RabbitMQ.RabbitMQProductor;
-import com.DWiZero.Services.Cache.userService;
+import com.DWiZero.Services.Cache.UserService;
 import com.DWiZero.Util.DynamicScheduledTask;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,7 +18,7 @@ public class TestController
 //    @Autowired
     RabbitMQProductor rabbitMQProductor;
     @Autowired
-    userService userService;
+    UserService userService;
 
     @GetMapping(value = "/scheduled")
     public void testScheduled()

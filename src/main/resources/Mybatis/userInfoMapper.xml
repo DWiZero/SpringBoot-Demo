@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.DWiZero.Mapper.userInfoMapper">
-  <resultMap id="BaseResultMap" type="com.DWiZero.Bean.VO.userInfo">
+<mapper namespace="com.DWiZero.Mapper.UserInfoMapper">
+  <resultMap id="BaseResultMap" type="com.DWiZero.Bean.VO.UserInfo">
     <id column="user_id"  property="userId" />
     <result column="user_name"  property="userName" />
   </resultMap>
@@ -18,11 +18,11 @@
     delete from user_info
     where user_id = #{userId,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.DWiZero.Bean.VO.userInfo">
+  <insert id="insert" parameterType="com.DWiZero.Bean.VO.UserInfo">
     insert into user_info (user_id, user_name)
     values (#{userId,jdbcType=INTEGER}, #{userName,jdbcType=VARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="com.DWiZero.Bean.VO.userInfo">
+  <insert id="insertSelective" parameterType="com.DWiZero.Bean.VO.UserInfo">
     insert into user_info
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="userId != null">
@@ -41,7 +41,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.DWiZero.Bean.VO.userInfo">
+  <update id="updateByPrimaryKeySelective" parameterType="com.DWiZero.Bean.VO.UserInfo">
     update user_info
     <set>
       <if test="userName != null">
@@ -50,7 +50,7 @@
     </set>
     where user_id = #{userId,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.DWiZero.Bean.VO.userInfo">
+  <update id="updateByPrimaryKey" parameterType="com.DWiZero.Bean.VO.UserInfo">
     update user_info
     set user_name = #{userName,jdbcType=VARCHAR}
     where user_id = #{userId,jdbcType=INTEGER}

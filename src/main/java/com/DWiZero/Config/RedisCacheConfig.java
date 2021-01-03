@@ -20,8 +20,7 @@ public class RedisCacheConfig
     @Bean
     public CacheManager cacheManager(RedisTemplate<?, ?> redisTemplate) {
         RedisCacheConfiguration configuration = RedisCacheConfiguration.defaultCacheConfig();
-        RedisCacheManager cacheManager = new RedisCacheManager((RedisCacheWriter) redisTemplate, configuration);
-        return cacheManager;
+        return new RedisCacheManager((RedisCacheWriter) redisTemplate, configuration);
     }
     @Bean
     public RedisTemplate<String, String> redisTemplate(RedisConnectionFactory factory) {

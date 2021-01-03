@@ -19,10 +19,10 @@ import java.util.Arrays;
 @Aspect
 //@Component
 @Log4j2
-public class controllerLog
+public class ControllerLog
 {
 
-    @Pointcut("execution(public * com.dwizero.Rest..*.*(..))")
+    @Pointcut("execution(public * com.DWiZero.Controller..*.*(..))")
     public void webLog()
     {
     }

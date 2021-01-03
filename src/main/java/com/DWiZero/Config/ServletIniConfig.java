@@ -1,6 +1,6 @@
 package com.DWiZero.Config;
 
-import com.DWiZero.Filter.requestAddFilter;
+import com.DWiZero.Filter.RequestAddFilter;
 import com.DWiZero.Application;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
@@ -29,8 +29,8 @@ public class ServletIniConfig extends SpringBootServletInitializer
     }
 
     @Bean
-    public requestAddFilter requestFilter() {
-        return new requestAddFilter();
+    public RequestAddFilter requestFilter() {
+        return new RequestAddFilter();
     }
 
 }
