@@ -3,6 +3,7 @@ package com.DWiZero.Services.Async;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.scheduling.annotation.AsyncResult;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.concurrent.Future;
 
@@ -17,7 +18,7 @@ import java.util.concurrent.Future;
 @Service
 public class AsyncService {
 
-
+    @Transactional
     @Async
     public void submitTaskWithoutResult() {
 
